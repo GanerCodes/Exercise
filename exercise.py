@@ -11,4 +11,4 @@ while True:
         sleep(1)
     print("Excercise time",
         m := f"{choice(range(10, 15))}x {choice(('pushup', 'situp', 'lunge'))}s")
-    Popen(["mpv", "--volume=50", path.join(argv[0], "sfx.mp3")], stdout=DEVNULL)
+    Popen(["mpv", "--volume=50", path.join(path.dirname(argv[0]), "sfx.mp3")], stdout=DEVNULL, stderr=DEVNULL)
