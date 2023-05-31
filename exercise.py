@@ -1,6 +1,8 @@
+from os import path
+from sys import argv
 from time import sleep
 from random import choice
-from subprocess import Popen
+from subprocess import Popen, DEVNULL
 
 display, m = lambda x: f"{x//60:0>2}:{x%60:0>2}", ""
 while True:
@@ -9,4 +11,4 @@ while True:
         sleep(1)
     print("Excercise time",
         m := f"{choice(range(10, 15))}x {choice(('pushup', 'situp', 'lunge'))}s")
-    Popen(["mpv", "--volume=50", "./sfx.mp3"])
+    Popen(["mpv", "--volume=50", path.join(argv[0], "sfx.mp3")], stdout=subprocess.DEVNULL)
